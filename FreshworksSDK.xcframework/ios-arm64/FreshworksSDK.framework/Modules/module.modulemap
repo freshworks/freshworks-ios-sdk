@@ -1,0 +1,11 @@
+framework module FreshworksSDK {
+  umbrella header "FreshworksSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module FreshworksSDK.Swift {
+  header "FreshworksSDK-Swift.h"
+  requires objc
+}

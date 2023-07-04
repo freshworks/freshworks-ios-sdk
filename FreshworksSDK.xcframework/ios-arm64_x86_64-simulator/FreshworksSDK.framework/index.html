@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+    </head>
+    
+    <body>
+        <script>
+            let platform = "iOS";
+            const iOS = 'iOS';
+            const ANDROID = 'ANDROID';
+            const LOG = {
+                V: 1,
+                D: 2,
+                I: 3,
+                W: 4,
+                E: 5
+            };
+
+            let log = {
+                _log: function(priority, message) {
+                    let logInfo = { priority: priority, message: message }
+                    webkit.messageHandlers.onConsoleMessage.postMessage(logInfo);
+                },
+                v: (message) => log._log(LOG.V, message),
+                d: (message) => log._log(LOG.D, message),
+                i: (message) => log._log(LOG.I, message),
+                w: (message) => log._log(LOG.W, message),
+                e: (message) => log._log(LOG.E, message),
+            };
+            
+            window.fcSettings = {
+              onInit: function() {
+                  log.d("ON INIT CALLED");
+                  
+                 window.fcWidget.on("widget:loaded", function(resp) {
+                      webkit.messageHandlers.widgetLoaded.postMessage(resp);
+                      
+                      if(window.fcWidgetMessengerConfig.channelToOpen) {
+                          window.fcWidget.open({
+                              id: window.fcWidgetMessengerConfig.channelToOpen
+                          });
+                      }
+                  });
+                  
+                  window.fcWidget.on("widget:closed", function(resp) {
+                      console.log('Widget Closed');
+                      webkit.messageHandlers.widgetClosed.postMessage(resp);
+                  });
+                  
+                  window.fcWidget.on("user:created", function(resp) {
+                      window.fcWidget.user.get().then(function(result) {
+                          webkit.messageHandlers.onUserCreated.postMessage(result);
+                      });
+                  });
+              }
+            }
+            
+            function getUserDetails(key) {
+                let message = {
+                    key: key,
+                }
+                
+                window.fcWidget.user.get().then(function(result) {
+                    message.value = result
+                    webkit.messageHandlers.onUserFetchSuccess.postMessage(message);
+                }).catch(function(error) {
+                    message.value = error
+                    webkit.messageHandlers.onUserFetchFailure.postMessage(message);
+                });
+            }
+            
+            
+        </script>
+    </body>
+    
+</html>
+
