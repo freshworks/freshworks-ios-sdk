@@ -1,7 +1,7 @@
 framework module FreshworksSDK {
   umbrella header "FreshworksSDK.h"
-
   export *
+
   module * { export * }
 }
 

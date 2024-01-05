@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eux-H3-wqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="cO5-fM-wHy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eux-H3-wqX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9jB-FM-Nex">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sjQ-03-CbW" kind="relationship" relationship="rootViewController" id="PVg-82-VYT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HmQ-70-BQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95.419847328244273" y="-2.1126760563380285"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="aSs-ey-wla">
+            <objects>
+                <viewController storyboardIdentifier="LWSDKFeaturesViewController" title="Settings" id="sjQ-03-CbW" customClass="ViewController" customModule="SouthWest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QNJ-yx-FgW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-2v-sU1">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2A-nS-npW" userLabel="Container">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="479"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qEL-Zg-kF0">
+                                                <rect key="frame" x="-6.6666666666666572" y="0.0" width="406.33333333333326" height="479"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2B-oE-Drb">
+                                                        <rect key="frame" x="131.33333333333334" y="0.0" width="155.00000000000003" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Show Conversations"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="VHK-mR-0kB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Show Conversations   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapShowConversations:" destination="sjQ-03-CbW" eventType="touchUpInside" id="C6X-Nn-8xL"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NDX-al-T6o" userLabel="showParallelConversationInputVC">
+                                                        <rect key="frame" x="125.66666666666669" y="45" width="166" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Parallel Conversations"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Parallel Conversations   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="showParallelConversationInputVC:" destination="sjQ-03-CbW" eventType="touchUpInside" id="mKq-3R-dcC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-mG-aGt">
+                                                        <rect key="frame" x="161" y="90" width="96" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Show FAQs"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Show FAQs   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapShowFAQs:" destination="sjQ-03-CbW" eventType="touchUpInside" id="dMA-Wo-FVD"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEQ-4Q-DCP">
+                                                        <rect key="frame" x="108.33333333333331" y="135" width="201" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Conversations &amp; FAQs Tags"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Conversations &amp; FAQs Tags   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapConversationsAndFAQs:" destination="sjQ-03-CbW" eventType="touchUpInside" id="YX2-aD-DlK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZB5-FG-CqU">
+                                                        <rect key="frame" x="156" y="180" width="106" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Identify User"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Identify User   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapIdentifyUser:" destination="sjQ-03-CbW" eventType="touchUpInside" id="dsR-Cq-Zmr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2H-0p-eZy">
+                                                        <rect key="frame" x="138.33333333333334" y="225" width="141.00000000000003" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Update Properties"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Update Properties   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapSetUser:" destination="sjQ-03-CbW" eventType="touchUpInside" id="Jfn-uZ-T79"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwI-t7-Cam">
+                                                        <rect key="frame" x="162" y="270" width="94" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Reset User"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Reset User   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapResetUser:" destination="sjQ-03-CbW" eventType="touchUpInside" id="l3k-1l-rxu"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-hk-PgM">
+                                                        <rect key="frame" x="157" y="315" width="104" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Update JWT"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Update JWT   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTapUpdateJWT:" destination="sjQ-03-CbW" eventType="touchUpInside" id="Ydx-4G-aFW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4o1-Gf-vcQ" userLabel="showLanguageSelectionPickerView">
+                                                        <rect key="frame" x="113.66666666666669" y="360" width="190" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Change Widget Language"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Change Widget Language   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="changeWidgetLanguage:" destination="sjQ-03-CbW" eventType="touchUpInside" id="80g-aB-wL3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHP-di-fxo" userLabel="showLanguageSelectionPickerView">
+                                                        <rect key="frame" x="121" y="405" width="175" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Change User Language"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Change User Language   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="changeUserLanguage:" destination="sjQ-03-CbW" eventType="touchUpInside" id="Py0-5R-yHf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FY9-mX-sdU" userLabel="TrackTestUserEvent">
+                                                        <rect key="frame" x="148" y="450" width="121" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Log User Event"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Log User Event   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didTestTrackUserEvent:" destination="sjQ-03-CbW" eventType="touchUpInside" id="N8B-WT-YVm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4cp-Da-KOp" userLabel="showParallelConversationInputVC">
+                                                        <rect key="frame" x="152.66666666666666" y="495" width="111.99999999999997" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Load Account"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Load Account   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="changeAccount:" destination="sjQ-03-CbW" eventType="touchUpInside" id="F9s-HV-Vy3"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="qEL-Zg-kF0" firstAttribute="top" secondItem="o2A-nS-npW" secondAttribute="top" id="VCV-Ua-L3b"/>
+                                            <constraint firstAttribute="bottom" secondItem="qEL-Zg-kF0" secondAttribute="bottom" id="X78-Uc-zjV"/>
+                                            <constraint firstItem="qEL-Zg-kF0" firstAttribute="centerX" secondItem="o2A-nS-npW" secondAttribute="centerX" id="iF7-Ka-Uik"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="o2A-nS-npW" secondAttribute="bottom" id="4xs-tl-eXy"/>
+                                    <constraint firstItem="o2A-nS-npW" firstAttribute="top" secondItem="ndJ-2v-sU1" secondAttribute="top" id="REt-mO-vih"/>
+                                    <constraint firstAttribute="trailing" secondItem="o2A-nS-npW" secondAttribute="trailing" id="WUo-4K-QRK"/>
+                                    <constraint firstItem="o2A-nS-npW" firstAttribute="leading" secondItem="ndJ-2v-sU1" secondAttribute="leading" id="bBG-EX-yl4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="WEs-QH-AxA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="FVK-cd-zBZ"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s9O-3N-o1n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ndJ-2v-sU1" firstAttribute="top" secondItem="s9O-3N-o1n" secondAttribute="top" id="4VU-SC-vWf"/>
+                            <constraint firstItem="s9O-3N-o1n" firstAttribute="bottom" secondItem="ndJ-2v-sU1" secondAttribute="bottom" id="NJ6-rn-eyp"/>
+                            <constraint firstItem="o2A-nS-npW" firstAttribute="width" secondItem="s9O-3N-o1n" secondAttribute="width" id="Uex-2d-an0"/>
+                            <constraint firstItem="ndJ-2v-sU1" firstAttribute="leading" secondItem="QNJ-yx-FgW" secondAttribute="leading" id="cIY-6Z-b7g"/>
+                            <constraint firstAttribute="trailing" secondItem="ndJ-2v-sU1" secondAttribute="trailing" id="siu-eP-AP7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sig-Ck-s7M"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="stackview" destination="qEL-Zg-kF0" id="t7g-mt-T6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aF6-6K-ED7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="buttonDarkBlack">
+            <color red="0.023529411764705882" green="0.062745098039215685" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

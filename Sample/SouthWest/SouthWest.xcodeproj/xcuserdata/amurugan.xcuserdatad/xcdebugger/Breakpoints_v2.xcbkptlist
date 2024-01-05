@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9BCF0A89-DA2B-47FD-962C-BFA1E0C7535D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EB4683B-7D3F-48B1-9B36-71F28CE7F4AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Sources/FreshworksSDK/LWSDK/Core/FreshworksManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "updateUserProperties(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8EB4683B-7D3F-48B1-9B36-71F28CE7F4AF - c7d29c498c913f67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.FreshworksManager.updateUserProperties(with: FreshworksSDK.User) -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amurugan/Documents/Developer/LWSDK/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/Core/FreshworksManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "804">
+               </Location>
+               <Location
+                  uuid = "8EB4683B-7D3F-48B1-9B36-71F28CE7F4AF - c7d29c498c913f67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.FreshworksManager.updateUserProperties(with: FreshworksSDK.User) -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amurugan/Documents/Developer/LWSDK/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/Core/FreshworksManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1067">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -2,13 +2,22 @@ Freshchat iOS SDK - Powered by Freshdesk
 
 Documentation   : https://support.freshchat.com
 Support Email   : support@freshchat.com
-Version         : 0.0.1-alpha
+Version         : 0.0.1-beta
 
-Ver 0.0.1-alpha 
+Ver 0.0.1-beta
 __________________________
 
 Features:
-- Customers can chat with the end agent 
+- Switch effortlessly between multiple conversations using Parallel conversation.
+- Secure user authentication and authorization via JWT
+- Enjoy the platform in your preferred language with localization support
+- Stay informed with unread message counts
+
+Ver 0.0.1-alpha
+__________________________
+
+Features:
+- Customers can chat with the end agent
 - Faqs are supported
 - Users can be Restored with their Ids
 - Set User, Get User, Reset User are supported

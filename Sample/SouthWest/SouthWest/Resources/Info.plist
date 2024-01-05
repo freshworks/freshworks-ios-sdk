@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UILaunchScreen</key>
+		<dict>
+			<key>UIImageName</key>
+			<string>launchScreen</string>
+		</dict>
+	</dict>
+    <key>NSCameraUsageDescription</key>
+    <string>We need permission for enabling picture/video messages to enhance chat interactions.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>We need permission to record video messages, ensuring effective communication</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need permission to seamlessly save app-related images to your gallery for your convenience.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We need permission to access your gallery, enabling you to effortlessly share images during chats.</string>
+</dict>
+</plist>
