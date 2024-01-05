@@ -1,20 +1,61 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FreshworksSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
 @_exported import FreshworksSDK
 import Swift
+import SystemConfiguration
 import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol FreshworksJWTDelegate : AnyObject {
+  func userStateChanged(_ userState: FreshworksSDK.UserState)
+}
+public enum UserState : Swift.String {
+  case authenticated, created, loaded, identified, restored, unloaded
+  case notLoaded
+  case notCreated
+  case notAuthenticated
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public let FW_EMPTY_STR: Swift.String
-public let FRESHCHAT_USER_RESTORE_ID_GENERATED: Swift.String
-public let FRESHCHAT_USER_CREATED: Swift.String
+public let FRESHWORKS_USER_RESTORE_ID_GENERATED: Swift.String
+public let FRESHWORKS_USER_CREATED: Swift.String
+public let FRESHWORKS_UNREAD_MESSAGE_COUNT_CHANGED: Swift.String
 public struct User : Swift.Codable {
-  public init(from decoder: Swift.Decoder) throws
-  public func encode(to encoder: Swift.Encoder) throws
+  public var firstName: Swift.String? {
+    get
+  }
+  public var lastName: Swift.String? {
+    get
+  }
+  public var email: Swift.String? {
+    get
+  }
+  public var phone: Swift.String? {
+    get
+  }
+  public var phoneCountry: Swift.String? {
+    get
+  }
+  public var identifier: Swift.String? {
+    get
+  }
+  public var restoreId: Swift.String? {
+    get
+  }
+  public var meta: [Swift.String : Swift.String] {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 @_hasMissingDesignatedInitializers public class WidgetStateMonitor {
   @objc deinit
@@ -27,34 +68,39 @@ public struct SDKConfig : Swift.Codable {
   public var widgetId: Swift.String
   public var externalId: Swift.String
   public var restoreId: Swift.String
+  public var locale: Swift.String
   public var config: FreshworksSDK.Configuration
-  public init(source: Swift.String, appID: Swift.String, appKey: Swift.String, domain: Swift.String, widgetId: Swift.String = FW_EMPTY_STR, externalId: Swift.String = FW_EMPTY_STR, restoreId: Swift.String = FW_EMPTY_STR, config: FreshworksSDK.Configuration = Configuration())
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public var jwtAuthToken: Swift.String {
+    get
+  }
+  public init(source: Swift.String, appID: Swift.String, appKey: Swift.String, domain: Swift.String, widgetId: Swift.String = FW_EMPTY_STR, externalId: Swift.String = FW_EMPTY_STR, restoreId: Swift.String = FW_EMPTY_STR, locale: Swift.String = FW_EMPTY_STR, jwtAuthToken: Swift.String? = FW_EMPTY_STR, config: FreshworksSDK.Configuration = Configuration())
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct Configuration : Swift.Codable {
   public var content: FreshworksSDK.HeaderContent
   public var headerProperty: FreshworksSDK.HeaderProperty
+  public var fullscreen: Swift.Bool
   public var showFAQOnOpen: Swift.Bool
   public var faqPopupView: Swift.Bool
   public var disableNotifications: Swift.Bool
   public var disableEvents: Swift.Bool
   public init(showFAQOnOpen: Swift.Bool = false, faqPopupView: Swift.Bool = false, disableNotifications: Swift.Bool = false, disableEvents: Swift.Bool = false, content: FreshworksSDK.HeaderContent = HeaderContent(), headerProperty: FreshworksSDK.HeaderProperty = HeaderProperty())
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct HeaderProperty : Swift.Codable {
   public var hideChatButton: Swift.Bool
   public init(hideChatButton: Swift.Bool = true)
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public struct HeaderContent : Swift.Codable {
   public var welcomeMessage: Swift.String
   public var welcomeSubMessage: Swift.String
   public init(welcomeMessage: Swift.String = FW_EMPTY_STR, welcomeSubMessage: Swift.String = FW_EMPTY_STR)
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum FAQFilterType : Swift.String, Swift.Codable {
   case category
@@ -70,29 +116,42 @@ public struct FAQTags : Swift.Codable {
   public var tags: [Swift.String]
   public var filterType: FreshworksSDK.FAQFilterType
   public init(tags: [Swift.String] = [], filterType: FreshworksSDK.FAQFilterType = .none)
-  public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Freshworks : FreshworksSDK.WidgetStateMonitor {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class Freshworks : FreshworksSDK.WidgetStateMonitor {
   public static let shared: FreshworksSDK.Freshworks
   @objc deinit
 }
 extension FreshworksSDK.Freshworks {
-  public func initializeFreshworksSDK(with model: FreshworksSDK.SDKConfig)
-  public func showConversations(_ viewController: UIKit.UIViewController, convTags: [Swift.String] = [])
-  public func showFAQs(_ viewController: UIKit.UIViewController, faqTags: FreshworksSDK.FAQTags = FAQTags())
+  final public func initializeFreshworksSDK(with model: FreshworksSDK.SDKConfig)
+  final public func showConversations(_ viewController: UIKit.UIViewController, convTags: [Swift.String] = [])
+  final public func showFAQs(_ viewController: UIKit.UIViewController, faqTags: FreshworksSDK.FAQTags = FAQTags())
+  final public func changeWidgetLanguage(locale code: Swift.String)
+  final public func changeUserLanguage(locale code: Swift.String)
+  final public func showConversation(conversationReferenceId: Swift.String, topicName: Swift.String)
+  final public func getUnreadCount() -> Swift.Int
 }
 extension FreshworksSDK.Freshworks {
-  public func setPushRegistrationToken(_ deviceToken: Foundation.Data)
-  public func isFreshworksNotification(_ response: UserNotifications.UNNotificationResponse) -> Swift.Bool
-  public func handleRemoteNotification(_ response: UserNotifications.UNNotificationResponse, _ completionHandler: @escaping () -> Swift.Void)
+  final public func setPushRegistrationToken(_ deviceToken: Foundation.Data)
+  final public func isFreshworksNotification(_ response: [Swift.AnyHashable : Any]) -> Swift.Bool
+  final public func handleRemoteNotification(_ response: [Swift.AnyHashable : Any], _ completionHandler: @escaping () -> Swift.Void)
 }
 extension FreshworksSDK.Freshworks {
-  public func getUser(onFailure: ((Swift.Error) -> Swift.Void)? = nil, onSuccess: @escaping (FreshworksSDK.User) -> Swift.Void)
-  public func setUserDetails(firstName: Swift.String? = nil, lastName: Swift.String? = nil, email: Swift.String? = nil, phone: Swift.String? = nil, phoneCountry: Swift.String? = nil, customProperties: [Swift.String : Swift.String] = [:])
-  public func identifyUser(externalId: Swift.String, restoreId: Swift.String? = FW_EMPTY_STR)
-  public func resetUser()
+  final public func getUser(onFailure: ((any Swift.Error) -> Swift.Void)? = nil, onSuccess: @escaping (FreshworksSDK.User) -> Swift.Void)
+  final public func setUserDetails(firstName: Swift.String? = nil, lastName: Swift.String? = nil, email: Swift.String? = nil, phone: Swift.String? = nil, phoneCountry: Swift.String? = nil, customProperties: [Swift.String : Swift.String] = [:])
+  final public func identifyUser(externalId: Swift.String, restoreId: Swift.String? = FW_EMPTY_STR)
+  final public func resetUser(completion: (() -> Swift.Void)? = nil)
+  final public func trackUserEvents(name: Swift.String, payload: [Swift.String : Swift.String]? = nil)
 }
+extension FreshworksSDK.Freshworks {
+  final public func setJWTDelegate(_ delegate: (any FreshworksSDK.FreshworksJWTDelegate)?)
+  final public func getUUID(onSuccess: @escaping (Swift.String) -> Swift.Void, onFailure: ((any Swift.Error) -> Swift.Void)? = nil)
+  final public func updateUser(_ jwt: Swift.String)
+}
+extension FreshworksSDK.UserState : Swift.Equatable {}
+extension FreshworksSDK.UserState : Swift.Hashable {}
+extension FreshworksSDK.UserState : Swift.RawRepresentable {}
 extension FreshworksSDK.FAQFilterType : Swift.Equatable {}
 extension FreshworksSDK.FAQFilterType : Swift.Hashable {}
 extension FreshworksSDK.FAQFilterType : Swift.RawRepresentable {}

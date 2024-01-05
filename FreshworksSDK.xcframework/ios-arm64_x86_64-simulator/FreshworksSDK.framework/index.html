@@ -34,16 +34,36 @@
               onInit: function() {
                   log.d("ON INIT CALLED");
                   
-                 window.fcWidget.on("widget:loaded", function(resp) {
-                      webkit.messageHandlers.widgetLoaded.postMessage(resp);
-                      
-                      if(window.fcWidgetMessengerConfig.channelToOpen) {
-                          window.fcWidget.open({
-                              id: window.fcWidgetMessengerConfig.channelToOpen
-                          });
+                  function authenticateUser(userData) {
+                      if (userData && userData.freshchat_uuid) {
+                          log.d("UUID found");
+                          log.d(userData.freshchat_uuid);
+                          webkit.messageHandlers.onUUIDGenerated.postMessage(userData.freshchat_uuid);
+                      } else {
+                          getUUID();
                       }
-                  });
-                  
+                  }
+                 window.fcWidget.on("widget:loaded", function(resp) {
+                     webkit.messageHandlers.widgetLoaded.postMessage(resp);
+                     
+                     const { fcWidgetMessengerConfig } = window;
+                      const { conversationReferenceId, topicNameForConversationReferenceId, channelToOpen } = fcWidgetMessengerConfig;
+
+                      if (conversationReferenceId !== "") { //This is for Parallel conversations
+                          if (topicNameForConversationReferenceId !== "") {
+                              openConversationWithTopicName(topicNameForConversationReferenceId, conversationReferenceId);
+                          } else if (channelToOpen) {
+                              openConversationWithChannelId(channelToOpen, conversationReferenceId);
+                          } else {
+                              openConversationWithTopicName(topicNameForConversationReferenceId, conversationReferenceId);
+                          }
+                      } else if (channelToOpen) {
+                          openConversationWithChannelId(channelToOpen);
+                      } else if(topicNameForConversationReferenceId !== "") {
+                          openConversationWithTopicName(topicNameForConversationReferenceId);
+                      }
+                 });
+                 
                   window.fcWidget.on("widget:closed", function(resp) {
                       console.log('Widget Closed');
                       webkit.messageHandlers.widgetClosed.postMessage(resp);
@@ -52,9 +72,49 @@
                   window.fcWidget.on("user:created", function(resp) {
                       window.fcWidget.user.get().then(function(result) {
                           webkit.messageHandlers.onUserCreated.postMessage(result);
+                      }, function(error) {
+                          if(error.status = 401) {
+                              log.w("User does not exist")
+                          } else {
+                              log.e("Error getting user", JSON.stringify(error));
+                          }
                       });
                   });
+                  
+                  window.fcWidget.on("unreadCount:notify", function(resp) {
+                      log.d("Unread count changed");
+                      webkit.messageHandlers.unreadCountChanged.postMessage(resp);
+                  });
+                  
+                  window.fcWidget.on("frame:statechange", function(data) {
+                     if (data.success === false && data.data.frameState === "not_authenticated") {
+                         authenticateUser(data);
+                     }
+                   });
+                  window.fcWidget.on("user:statechange", function(data) {
+                      log.d("User state change");
+                      log.d(data);
+                      if (data.success) {
+                      } else {
+                          let userData = data.data;
+                          if (userData) {
+                              if (["not_loaded", "unloaded", "not_created", "not_authenticated"].includes(userData.userState)) {
+                                  authenticateUser(userData);
+                              }
+                          }
+                      }
+                      webkit.messageHandlers.onUserStateChanged.postMessage(data.data.userState);
+                  });
               }
+            }
+            
+            function setExternalId(externalId) {
+                log.d("Setting external ID: "+externalId);
+                window.fcWidget.setExternalId(externalId).then(function(resp) {
+                    log.d(JSON.stringify(resp));
+                }, function(error) {
+                    log.e(JSON.stringify(error));
+                });
             }
             
             function getUserDetails(key) {
@@ -71,8 +131,40 @@
                 });
             }
             
+            function getUUID(key) {
+                let message = {
+                    key: key
+                }
+                window.fcWidget.user.getUUID().then((resp) => {
+                    let uuid = resp && resp.data && resp.data.uuid;
+                    message.value = uuid
+                    if (uuid) {
+                        webkit.messageHandlers.onUUIDGenerationSuccess.postMessage(message);
+                    } else {
+                        webkit.messageHandlers.onUUIDGenerationFailure.postMessage(message);
+                    }
+                });
+            }
             
-        </script>
+            function reauthenticateUser(uuid) {
+                window.fcWidget.authenticate(uuid);
+            }
+            
+            function openConversationWithTopicName(topicName, referenceId) {
+                window.fcWidget.open({
+                    name: topicName,
+                    conversationReferenceId: referenceId
+                });
+            }
+             
+             function openConversationWithChannelId(channelId, referenceId) {
+                 window.fcWidget.open({
+                     id: channelId,
+                     conversationReferenceId: referenceId
+                 });
+             }
+
+            </script>
     </body>
     
 </html>

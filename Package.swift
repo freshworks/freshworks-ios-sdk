@@ -3,7 +3,7 @@ import PackageDescription
 let package = Package(
     name: "FreshworksSDK",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v14)
     ],
     products: [
         .library(
