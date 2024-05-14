@@ -10,11 +10,20 @@
 		191DD9B62B232EF000D96481 /* LogUserEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191DD9B52B232EF000D96481 /* LogUserEventView.swift */; };
 		1944DCC92B0C7FC800584408 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944DCC82B0C7FC800584408 /* AppDelegate.swift */; };
 		1944DCD12B0C89DF00584408 /* SWConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1944DCD02B0C89DF00584408 /* SWConstants.swift */; };
+		195708BD2BD92315003CD3BA /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195708BC2BD92315003CD3BA /* ToastView.swift */; };
+		195708BF2BD92391003CD3BA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195708BE2BD92391003CD3BA /* UIViewController+Extensions.swift */; };
+		195708C12BDBB197003CD3BA /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195708C02BDBB197003CD3BA /* UIColor+Extensions.swift */; };
+		19A2CBB22BBFB992004B937D /* SWUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A2CBB12BBFB992004B937D /* SWUtils.swift */; };
 		19D565642B289C9700AEC9E9 /* ChangeLanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D565632B289C9700AEC9E9 /* ChangeLanguageView.swift */; };
 		19D565672B28A22400AEC9E9 /* SupportedLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D565662B28A22400AEC9E9 /* SupportedLanguage.swift */; };
+		19D8CB632B31C51F002441A0 /* UpdateConvOrBotAttributesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D8CB622B31C51F002441A0 /* UpdateConvOrBotAttributesView.swift */; };
+		19FD93EA2BDFB4A00083AE43 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FD93E92BDFB4A00083AE43 /* KeyboardObserver.swift */; };
+		3D0B72F52B66E9A20072AC25 /* SetConfigLocalisationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B72F42B66E9A20072AC25 /* SetConfigLocalisationView.swift */; };
+		3D0B72F72B675A5B0072AC25 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0B72F62B675A5B0072AC25 /* AnyCodable.swift */; };
 		561EF6722B2325C6002FAC0B /* UpdateJWTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561EF6712B2325C6002FAC0B /* UpdateJWTView.swift */; };
 		562159BD2B2852A900681E7B /* NavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562159BC2B2852A900681E7B /* NavigationController+Extensions.swift */; };
 		562159C02B2855B800681E7B /* NoTapEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562159BF2B2855B800681E7B /* NoTapEffectButton.swift */; };
+		56603FCF2B5FD11E00CD1BCB /* FeatureTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56603FCE2B5FD11E00CD1BCB /* FeatureTextEditor.swift */; };
 		566A2BC82B29CBE5004A9179 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566A2BC72B29CBE5004A9179 /* UIApplication+Extensions.swift */; };
 		5679E08E2B2063D50059598A /* Tabbar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5679E08D2B2063D50059598A /* Tabbar+Extensions.swift */; };
 		5696C02C2B078BF40023568E /* UnreadCountItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5696C02B2B078BF40023568E /* UnreadCountItemView.swift */; };
@@ -50,9 +59,11 @@
 		56A5C3342AFBAE3800736CF5 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5C3332AFBAE3800736CF5 /* MyOrdersView.swift */; };
 		56A5C3362AFC27AB00736CF5 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5C3352AFC27AB00736CF5 /* OrderItem.swift */; };
 		56A5C3382AFC29B500736CF5 /* OrderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5C3372AFC29B500736CF5 /* OrderItemView.swift */; };
+		56EAEFC32B7B9B3800B93D9A /* ConfigureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EAEFC22B7B9B3800B93D9A /* ConfigureView.swift */; };
 		7C1B222F2B29DFA800F7A46B /* FreshworksSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7C1B222E2B29DFA800F7A46B /* FreshworksSDK */; };
 		7C650FDD2B2B0EAE0037ACCA /* FreshworksSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7C650FDC2B2B0EAE0037ACCA /* FreshworksSDK */; };
 		7C6E58392B3AF68B008C7EF5 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6E58382B3AF68B008C7EF5 /* Configurations.swift */; };
+		ADE3A1E02B6000B900C84D77 /* PropertiesViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE3A1DF2B6000B900C84D77 /* PropertiesViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,11 +71,20 @@
 		1944DCC52B0C7BAF00584408 /* SouthWest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SouthWest.entitlements; sourceTree = "<group>"; };
 		1944DCC82B0C7FC800584408 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1944DCD02B0C89DF00584408 /* SWConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWConstants.swift; sourceTree = "<group>"; };
+		195708BC2BD92315003CD3BA /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		195708BE2BD92391003CD3BA /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		195708C02BDBB197003CD3BA /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		19A2CBB12BBFB992004B937D /* SWUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWUtils.swift; sourceTree = "<group>"; };
 		19D565632B289C9700AEC9E9 /* ChangeLanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageView.swift; sourceTree = "<group>"; };
 		19D565662B28A22400AEC9E9 /* SupportedLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedLanguage.swift; sourceTree = "<group>"; };
+		19D8CB622B31C51F002441A0 /* UpdateConvOrBotAttributesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateConvOrBotAttributesView.swift; sourceTree = "<group>"; };
+		19FD93E92BDFB4A00083AE43 /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
+		3D0B72F42B66E9A20072AC25 /* SetConfigLocalisationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetConfigLocalisationView.swift; sourceTree = "<group>"; };
+		3D0B72F62B675A5B0072AC25 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		561EF6712B2325C6002FAC0B /* UpdateJWTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateJWTView.swift; sourceTree = "<group>"; };
 		562159BC2B2852A900681E7B /* NavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		562159BF2B2855B800681E7B /* NoTapEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTapEffectButton.swift; sourceTree = "<group>"; };
+		56603FCE2B5FD11E00CD1BCB /* FeatureTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeatureTextEditor.swift; sourceTree = "<group>"; };
 		566A2BC72B29CBE5004A9179 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		5679E08D2B2063D50059598A /* Tabbar+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tabbar+Extensions.swift"; sourceTree = "<group>"; };
 		5696C02B2B078BF40023568E /* UnreadCountItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadCountItemView.swift; sourceTree = "<group>"; };
@@ -102,7 +122,9 @@
 		56A5C3332AFBAE3800736CF5 /* MyOrdersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
 		56A5C3352AFC27AB00736CF5 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		56A5C3372AFC29B500736CF5 /* OrderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemView.swift; sourceTree = "<group>"; };
+		56EAEFC22B7B9B3800B93D9A /* ConfigureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureView.swift; sourceTree = "<group>"; };
 		7C6E58382B3AF68B008C7EF5 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		ADE3A1DF2B6000B900C84D77 /* PropertiesViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +147,11 @@
 				5679E08D2B2063D50059598A /* Tabbar+Extensions.swift */,
 				562159BC2B2852A900681E7B /* NavigationController+Extensions.swift */,
 				566A2BC72B29CBE5004A9179 /* UIApplication+Extensions.swift */,
+				3D0B72F62B675A5B0072AC25 /* AnyCodable.swift */,
+				19A2CBB12BBFB992004B937D /* SWUtils.swift */,
+				195708BE2BD92391003CD3BA /* UIViewController+Extensions.swift */,
+				195708C02BDBB197003CD3BA /* UIColor+Extensions.swift */,
+				19FD93E92BDFB4A00083AE43 /* KeyboardObserver.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -152,6 +179,9 @@
 				561EF6712B2325C6002FAC0B /* UpdateJWTView.swift */,
 				191DD9B52B232EF000D96481 /* LogUserEventView.swift */,
 				19D565632B289C9700AEC9E9 /* ChangeLanguageView.swift */,
+				19D8CB622B31C51F002441A0 /* UpdateConvOrBotAttributesView.swift */,
+				56EAEFC22B7B9B3800B93D9A /* ConfigureView.swift */,
+				3D0B72F42B66E9A20072AC25 /* SetConfigLocalisationView.swift */,
 			);
 			path = SwiftUIComponents;
 			sourceTree = "<group>";
@@ -168,8 +198,10 @@
 		56A3A5662B21BF05000177FA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				56603FCE2B5FD11E00CD1BCB /* FeatureTextEditor.swift */,
 				56A3A57C2B21BF5A000177FA /* FeatureBackgroundView.swift */,
 				56A3A57F2B21D62B000177FA /* FeatureTextfield.swift */,
+				195708BC2BD92315003CD3BA /* ToastView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -411,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				56A5C3272AFBA4A100736CF5 /* SideMenuItem.swift */,
+				ADE3A1DF2B6000B900C84D77 /* PropertiesViewData.swift */,
 				56A5C3352AFC27AB00736CF5 /* OrderItem.swift */,
 			);
 			path = Models;
@@ -521,20 +554,28 @@
 				56A5C3342AFBAE3800736CF5 /* MyOrdersView.swift in Sources */,
 				56A5C2EC2AFB3FCE00736CF5 /* DarkButton.swift in Sources */,
 				56A5C3122AFB58AF00736CF5 /* ProductDetailView.swift in Sources */,
+				ADE3A1E02B6000B900C84D77 /* PropertiesViewData.swift in Sources */,
+				19FD93EA2BDFB4A00083AE43 /* KeyboardObserver.swift in Sources */,
 				56A5C3302AFBAE0A00736CF5 /* SideMenuView.swift in Sources */,
 				56A5C31C2AFB68DB00736CF5 /* CheckoutView.swift in Sources */,
 				56A5C2D82AFA3AF500736CF5 /* TabView.swift in Sources */,
+				195708C12BDBB197003CD3BA /* UIColor+Extensions.swift in Sources */,
 				56A3A56F2B21BF05000177FA /* LWSDKFeaturesUIKit.swift in Sources */,
 				56A5C32F2AFBAE0A00736CF5 /* SideMenuItemView.swift in Sources */,
+				3D0B72F52B66E9A20072AC25 /* SetConfigLocalisationView.swift in Sources */,
+				56603FCF2B5FD11E00CD1BCB /* FeatureTextEditor.swift in Sources */,
 				1944DCC92B0C7FC800584408 /* AppDelegate.swift in Sources */,
+				195708BD2BD92315003CD3BA /* ToastView.swift in Sources */,
 				56A3A5722B21BF05000177FA /* ParallelConversationsInputView.swift in Sources */,
 				56A5C31E2AFB68E600736CF5 /* OrderPlacedView.swift in Sources */,
 				56A3A5702B21BF05000177FA /* UpdateUserDetailsView.swift in Sources */,
+				19A2CBB22BBFB992004B937D /* SWUtils.swift in Sources */,
 				56A5C2CC2AF9074C00736CF5 /* SouthWestApp.swift in Sources */,
 				56A3A5732B21BF05000177FA /* ChangeAccountView.swift in Sources */,
 				56A3A5772B21BF05000177FA /* UserDetails.swift in Sources */,
 				191DD9B62B232EF000D96481 /* LogUserEventView.swift in Sources */,
 				56A5C2CB2AF9074C00736CF5 /* LoginView.swift in Sources */,
+				19D8CB632B31C51F002441A0 /* UpdateConvOrBotAttributesView.swift in Sources */,
 				56A5C2D62AF9F98E00736CF5 /* BorderedTextfield.swift in Sources */,
 				561EF6722B2325C6002FAC0B /* UpdateJWTView.swift in Sources */,
 				5696C02C2B078BF40023568E /* UnreadCountItemView.swift in Sources */,
@@ -542,6 +583,8 @@
 				5679E08E2B2063D50059598A /* Tabbar+Extensions.swift in Sources */,
 				7C6E58392B3AF68B008C7EF5 /* Configurations.swift in Sources */,
 				56A5C3362AFC27AB00736CF5 /* OrderItem.swift in Sources */,
+				56EAEFC32B7B9B3800B93D9A /* ConfigureView.swift in Sources */,
+				3D0B72F72B675A5B0072AC25 /* AnyCodable.swift in Sources */,
 				56A5C31A2AFB68CE00736CF5 /* CartView.swift in Sources */,
 				56A5C3132AFB58AF00736CF5 /* ProductListView.swift in Sources */,
 				56A5C3282AFBA4A100736CF5 /* SideMenuItem.swift in Sources */,
@@ -551,6 +594,7 @@
 				1944DCD12B0C89DF00584408 /* SWConstants.swift in Sources */,
 				56A3A57A2B21BF05000177FA /* ViewController.swift in Sources */,
 				56A3A5742B21BF05000177FA /* ConversationFaqsCategoryWithTags.swift in Sources */,
+				195708BF2BD92391003CD3BA /* UIViewController+Extensions.swift in Sources */,
 				56A3A5712B21BF05000177FA /* IdentifyUserView.swift in Sources */,
 				562159BD2B2852A900681E7B /* NavigationController+Extensions.swift in Sources */,
 				56A5C3142AFB58AF00736CF5 /* FavouritesView.swift in Sources */,

@@ -18,11 +18,19 @@ struct Constants {
         static let backslashWithDoubleQuote = "\""
         static let comma = ","
         static let colon = ":"
+        static let commaSpace = ", "
+        static let colonSpace = ": "
     }
 
     struct Alert {
         static let title = "Alert"
         static let okay = "Okay"
+    }
+    
+    struct Toast {
+        static let eventSent = "Event sent: "
+        static let userResetSuccess = "User reset was successful"
+        static let invalidJson = "Invalid JSON. Please enter the correct JSON."
     }
     
     struct Login {
@@ -81,10 +89,11 @@ struct Constants {
         static let contactUsDescription = "Talk to an agent"
         static let myReview = "My Reviews"
         static let myReviewDescription = "Reviews for 4 items"
-        static let settings = "Settings"
-        static let settingsDescription = "Notifications, password"
+        static let settings = "Developer Settings"
+        static let settingsDescription = "To develop and test"
         static let logout = "Logout"
         static let unreadNotificationName = "FRESHCHAT_UNREAD_MESSAGE_COUNT_CHANGED"
+        static let SDKVersionTitle = "SDK Version: "
     }
 
     struct Features {
@@ -112,7 +121,7 @@ struct Constants {
             static let customerPropertiesTitle = "Custom Properties"
             static let customerPropertyPlaceholer = "Enter properties"
             
-            static let customerPropertyDescription = "Please enter the properties in the below fomrat. Eg:Key1:value1,key2:value2"
+            static let customerPropertyDescription = "Please enter the properties in the below fomrat. Eg:Key1: value1, key2: value2"
 
         }
         
@@ -127,6 +136,42 @@ struct Constants {
             static let restoreIDTitle = "Restore ID"
             static let restoreIDPlaceholder = "Enter Restore ID here."
 
+        }
+        
+        struct LocalisationConfig {
+            
+            static let title = "Set localisation config"
+            static let subheading = ""
+            static let mainButton = "Update config data"
+            
+            static let headerPropertyTitle = "Header property"
+            static let headerPropertyPlaceholder = "Enter header property Json here"
+            static let headerPropertyDescription = """
+                {
+                 Please enter the header property value in the below format:
+                
+                   "appName": "Freshworks sample app",
+                   "appLogo": "https://d1qb2nb5cznatu.cloudfront.net/startups/i/2473-2c38490d8e4c91660d86ff54ba5391ea-medium_jpg.jpg"
+                }
+                """
+
+            static let contentPropertyTitle = "Content property"
+            static let contentPropertyPlaceholder = "Enter content property Json here"
+            static let contentPropertyDescription = """
+               {
+                Please enter the content property value in the below format:
+               
+                   "welcomeMessage": "Hello Welcome",
+                   "headers": {
+                       "faq": "Faqs-Sections",
+                       "chat": "Chat with us - Say Hi",
+                       "csat_question": "Did we address your queries??"
+                   },
+                   "placeholders": {
+                       "search_field": "Search here"
+                   }
+               }
+               """
         }
         
         struct ParallelConversation {
@@ -171,8 +216,7 @@ struct Constants {
         
         struct Tags {
             static let title = "Conversation & FAQs Tags"
-            static let subheading = "Please enter the tags in a below format.\nEg: Tags1,Tags2"
-            
+            static let subheading = "Enter the tags in a format where they are separated by a comma and a space, for example: Tag1,Tag2"
             static let mainButton = "Show"
             
             static let tagsTitle = "Tags"
@@ -208,7 +252,7 @@ struct Constants {
             
             static let eventValueTitle = "Event Value"
             static let eventValuePlaceholder = "Enter event value"
-            static let eventValueDescription = "Please enter the event value in the below fomrat. Eg:Key1:value1,key2:value2"
+            static let eventValueDescription = "Please enter the event value in the below fomrat. Eg:Key1: value1, key2: value2"
         }
         
         struct ChangeLanguage {
@@ -221,6 +265,46 @@ struct Constants {
 
             static let defaultSelectedLanguageCode = "en"
             static let defaultSelectedLanguageDisplayName = "English"
+        }
+        
+        struct UpdateConvOrBotAttributesView {
+            static let mainButton = "Update"
+        }
+        
+        struct UpdateCustomBotVariables {
+            static let title = "Update Custom Bot Variables"
+            static let subheading = ""
+            static let textEditor = "Bot Variables"
+            static let textEditorPlaceholder = "Enter bot variables json string here"
+            static let textEditorDescription = """
+                                             Please enter the bot variables data in the below json string format.
+                                             {
+                                              "status": "active",
+                                              "type": 4
+                                             }
+                                             """
+        }
+        
+        struct setConversationProperties {
+            static let title = "Set Conversation Properties"
+            static let subheading = ""
+            static let textEditor = "Conversation Properties"
+            static let textEditorPlaceholder = "Enter Conversation properties json string here"
+            static let textEditorDescription = """
+                                             Please enter the conversation properties data in the below json string format.
+                                             {
+                                              "status": "active",
+                                              "type": 4
+                                             }
+                                             """
+        }
+        
+        struct Configurations {
+            static let title = "Configurations"
+            static let subheading = ""
+            static let mainButton = "Done"
+            static let outboundEventsToggleTitle = "Listen Outbound Events"
+            static let dismissButtonToggleTitle = "Show Dismiss Button"
         }
     }
     
@@ -258,6 +342,10 @@ struct Constants {
         static let domain = "fw_domain"
         static let widgetID = "fw_widgetID"
         static let jwt = "fw_jwt"
+        static let conversationProperties = "fw_conversationProperties"
+        static let botVariables = "fw_botVariables"
+        static let headerProperty = "fw_headerProperty"
+        static let contentProperty = "fw_contentProperty"
     }
     
     struct PreviewProvider {
@@ -271,7 +359,7 @@ struct Constants {
         static let signIn = "Sign In"
         static let dismiss = "Dismiss"
         static let myOrders = "My Orders"
-        static let settings = "Settings"
+        static let settings = "Develoepr Settings"
         static let contactUs = "Contact Us"
         static let productsView = "productsView"
         static let showFaqs = "showFaqs"
@@ -313,4 +401,23 @@ struct Colors {
     static let darkBlue = "buttonDarkBlack"
     static let backgroundGray = "backgroundGray"
     static let backgroundDarkGray = "backgroundDarkGray"
+}
+
+struct Dimensions {
+    struct DismissButton {
+        static let height: CGFloat = 60
+        static let width: CGFloat = 60
+        static let trailingSpacing: CGFloat = 16
+        static let bottomSpacing: CGFloat = 64
+    }
+}
+
+// TODO: Will change with change in account
+struct SDKTopicConfiguration {
+    static let topicName = "Topic 3"
+    struct ParallelConversation {
+        static let identifier = "Get Help"
+        static let identifierOne = "Get Help 1"
+        static let identifierTwo = "Get Help 2"
+    }
 }

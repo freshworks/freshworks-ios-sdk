@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "938CB8A2-8D66-4686-A22C-B332DB571F4F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB98DEFF-EC32-4F77-B3C6-93B35A659F58"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Sources/FreshworksSDK/LWSDK/Common/FWExtentions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "topViewController"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE9FA8F9-67A5-4E49-BE9B-39FEB0D95B31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Sources/FreshworksSDK/LWSDK/Common/FWExtentions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "topViewController"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AFF193D-C17E-4A3E-9D37-4FEAFC229CF4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Sources/FreshworksSDK/LWSDK/View/FWCustomBrowser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "startAnimating()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1AFF193D-C17E-4A3E-9D37-4FEAFC229CF4 - f2ab3c56ce10d88e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.FWCustomBrowser.startAnimating() -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sshaikh/Documents/GitHub/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/View/FWCustomBrowser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "1AFF193D-C17E-4A3E-9D37-4FEAFC229CF4 - f2ab3c56ce10d911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.FWCustomBrowser.startAnimating() -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sshaikh/Documents/GitHub/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/View/FWCustomBrowser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CE52813-1AC1-4A00-9189-B4AA6C5CB888"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Sources/FreshworksSDK/LWSDK/View/FWCustomBrowser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "stopAnimating()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CE52813-1AC1-4A00-9189-B4AA6C5CB888 - 3e8121c54c1dbe9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.FWCustomBrowser.stopAnimating() -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sshaikh/Documents/GitHub/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/View/FWCustomBrowser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "1CE52813-1AC1-4A00-9189-B4AA6C5CB888 - 3e8121c54c1dbe3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.FWCustomBrowser.stopAnimating() -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sshaikh/Documents/GitHub/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/View/FWCustomBrowser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A78F31EB-6C65-469D-8256-08A61DAB5ACE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Sources/FreshworksSDK/LWSDK/View/SDKWebView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "reloadWebView()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A78F31EB-6C65-469D-8256-08A61DAB5ACE - b2f76ee5f76af6df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.SDKWebView.reloadWebView(reloadIfAnythingNewChanged: Swift.Bool) -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sshaikh/Documents/GitHub/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/View/SDKWebView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "A78F31EB-6C65-469D-8256-08A61DAB5ACE - c03d1e380e0d7b58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FreshworksSDK.SDKWebView.reloadWebView() -&gt; ()"
+                  moduleName = "SouthWest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sshaikh/Documents/GitHub/freshworks_lightweight_ios_sdk_dev/Sources/FreshworksSDK/LWSDK/View/SDKWebView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

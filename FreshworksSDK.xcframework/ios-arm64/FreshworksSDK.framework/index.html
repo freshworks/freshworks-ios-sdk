@@ -47,26 +47,21 @@
                      webkit.messageHandlers.widgetLoaded.postMessage(resp);
                      
                      const { fcWidgetMessengerConfig } = window;
-                      const { conversationReferenceId, topicNameForConversationReferenceId, channelToOpen } = fcWidgetMessengerConfig;
-
-                      if (conversationReferenceId !== "") { //This is for Parallel conversations
-                          if (topicNameForConversationReferenceId !== "") {
-                              openConversationWithTopicName(topicNameForConversationReferenceId, conversationReferenceId);
-                          } else if (channelToOpen) {
-                              openConversationWithChannelId(channelToOpen, conversationReferenceId);
-                          } else {
-                              openConversationWithTopicName(topicNameForConversationReferenceId, conversationReferenceId);
-                          }
-                      } else if (channelToOpen) {
-                          openConversationWithChannelId(channelToOpen);
-                      } else if(topicNameForConversationReferenceId !== "") {
-                          openConversationWithTopicName(topicNameForConversationReferenceId);
+                      const { conversationReferenceId, channelToOpen } = fcWidgetMessengerConfig;
+                      
+                      if(channelToOpen) {
+                          openConversationWithChannelId(channelToOpen, conversationReferenceId);
                       }
                  });
                  
                   window.fcWidget.on("widget:closed", function(resp) {
                       console.log('Widget Closed');
                       webkit.messageHandlers.widgetClosed.postMessage(resp);
+                  });
+                  
+                  window.fcWidget.on("widget:opened", function(resp) {
+                      console.log('Widget Opened');
+                      webkit.messageHandlers.widgetOpened.postMessage(resp);
                   });
                   
                   window.fcWidget.on("user:created", function(resp) {
@@ -104,6 +99,41 @@
                           }
                       }
                       webkit.messageHandlers.onUserStateChanged.postMessage(data.data.userState);
+                  });
+                  
+                  window.fcWidget.on("message:sent", function(data) {
+                      console.log('Message Sent');
+                      webkit.messageHandlers.messageSent.postMessage(data);
+                  });
+                  
+                  window.fcWidget.on("message:received", function(data) {
+                      console.log('Message Received');
+                      webkit.messageHandlers.messageReceived.postMessage(data);
+                  });
+                  
+                  window.fcWidget.on("csat:received", function(data) {
+                      console.log('Csat Received');
+                      webkit.messageHandlers.csatReceived.postMessage(data);
+                  });
+                  
+                  window.fcWidget.on("csat:updated", function(data) {
+                      console.log('Csat Updated');
+                      webkit.messageHandlers.csatUpdated.postMessage(data);
+                  });
+                  
+                  window.fcWidget.on("widget:destroyed", function() {
+                      console.log('Widget Destroyed');
+                      webkit.messageHandlers.widgetDestroyed.postMessage();
+                  });
+                  
+                  window.fcWidget.on("download:file", function(response) {
+                      console.log('Download File');
+                      webkit.messageHandlers.downloadFile.postMessage(response);
+                  });
+                  
+                  window.fcWidget.on("user:cleared", function(data) {
+                      console.log('User Cleared');
+                      webkit.messageHandlers.onUserCleared.postMessage(data);
                   });
               }
             }

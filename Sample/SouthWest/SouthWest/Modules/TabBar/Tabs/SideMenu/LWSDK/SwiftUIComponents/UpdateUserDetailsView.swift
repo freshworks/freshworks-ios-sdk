@@ -74,8 +74,7 @@ struct UpdateUserDetailsView: View {
     }
 
     private func updateButtonTapped() {
-        convertToDictionary()
-        
+        customProperties = SWUtilMethods.convertToDictionary(from: customPropertiesString)
         // Create UserDetails instance
         let userDetails = UserDetails(
             firstName: firstName,
@@ -87,21 +86,6 @@ struct UpdateUserDetailsView: View {
         )
         UserDefaults.standard.setUserDetails(userDetails)
         didDismiss(userDetails)
-    }
-    
-    private func convertToDictionary() {
-        customProperties = customPropertiesString
-            .replacingOccurrences(of: Constants.Characters.singleSpace, with: Constants.Characters.emptyString)
-            .replacingOccurrences(of: Constants.Characters.backslashWithDoubleQuote, with: Constants.Characters.emptyString)
-            .components(separatedBy: Constants.Characters.comma)
-            .reduce(into: [String: String]()) { result, keyValue in
-                let components = keyValue.components(separatedBy: Constants.Characters.colon)
-                if components.count == 2 {
-                    let key = components[0]
-                    let value = components[1]
-                    result[key] = value
-                }
-            }
     }
 }
 

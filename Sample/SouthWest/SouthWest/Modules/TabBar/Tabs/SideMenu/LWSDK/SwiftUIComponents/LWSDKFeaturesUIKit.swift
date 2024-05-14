@@ -9,7 +9,7 @@ import SwiftUI
 import UIKit
 
 // Create a UIViewControllerRepresentable struct
-struct LWSDKFeaturesView: UIViewControllerRepresentable {
+struct LWSDKFeaturesView: UIViewControllerRepresentable {    
     
     // TODO: Change this controller from UIKit to SwiftUI
     

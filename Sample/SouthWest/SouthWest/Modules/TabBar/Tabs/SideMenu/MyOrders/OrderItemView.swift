@@ -46,7 +46,9 @@ struct OrderItemView: View {
             
             HStack(spacing: 0) {
                 Button {
-                    Freshworks.shared.showConversation(conversationReferenceId: item.id.uuidString, topicName: Configurations.ParallelConversation.topicName)
+                    if let topView = UIApplication.topView {
+                        Freshworks.shared.openConversation(topView, conversationReferenceId: item.id.uuidString, topicName: Configurations.ParallelConversation.topicName)
+                    }
                 } label: {
                     HStack {
                         Spacer()

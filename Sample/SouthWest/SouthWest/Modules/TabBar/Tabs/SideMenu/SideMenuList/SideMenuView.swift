@@ -59,6 +59,11 @@ struct SideMenuView: View {
                                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                         }
                     }
+                    
+                    Text("\(Constants.SideMenu.SDKVersionTitle)\(Freshworks.shared.getSDKVersion())")
+                        .font(.system(size: 12, weight: .medium))
+                        .foregroundColor(Color(Colors.darkBlue))
+                    
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
@@ -90,7 +95,13 @@ struct SideMenuView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
             orientation = UIDevice.current.orientation
+            isSideMenuVisible = true
         }
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name(rawValue: FWEvents.unreadCount.rawValue))) { notification in
+            guard let unreadCount = notification.object as? Int else { return }
+            updateUnreadCount(unreadCount)
+        }
+
     }
     
     func showConversations() {
@@ -100,7 +111,8 @@ struct SideMenuView: View {
     }
     
     func updateUnreadCount(_ count: Int) {
-        unreadCount = count > 0 ? "\(count)" : Constants.Characters.emptyString
+        let formattedCount = count > 9 ? "9+" : "\(count)"
+        unreadCount = count > 0 ? formattedCount : Constants.Characters.emptyString
     }
 }
 

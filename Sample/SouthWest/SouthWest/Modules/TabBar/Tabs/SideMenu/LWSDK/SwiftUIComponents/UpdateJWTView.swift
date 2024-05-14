@@ -13,15 +13,9 @@ struct UpdateJWTView: View {
     
     let didDismiss: (_ jwt: String?) -> Void
 
-    var handler = JWTObservableHandler()
-
-    @State private var userState: String = Constants.Characters.emptyString
-    @State private var uuid: String = Constants.Characters.emptyString
+    @ObservedObject private var handler = JWTObservableHandler()
     @State private var jwt: String = Constants.Characters.emptyString
-    
     @State private var showAlert: Bool = false
-    
-    @State private var cancellables: Set<AnyCancellable> = []
 
     var body: some View {
         FeatureBackgroundView(
@@ -36,12 +30,12 @@ struct UpdateJWTView: View {
                 FeatureTextfield(
                     title: Constants.Features.UpdateJWT.userStateTitle,
                     placeholder: Constants.Features.UpdateJWT.userStatePlaceholder,
-                    content: $userState
+                    content: $handler.userState
                 )
                 FeatureTextfield(
                     title: Constants.Features.UpdateJWT.uuidTitle,
                     placeholder: Constants.Features.UpdateJWT.uuidPlaceholder,
-                    content: $uuid
+                    content: $handler.uuid
                 )
                 FeatureTextfield(
                     title: Constants.Features.UpdateJWT.tokenTitle,
@@ -53,12 +47,7 @@ struct UpdateJWTView: View {
         )
         .onAppear {
             handler.setDelegate()
-            
-            // Observe changes in the state property
-            handler.$state.sink { newUserState in
-                handleUserStateChanged(newUserState)
-            }
-            .store(in: &cancellables)
+            handler.setUserState()
         }
         .alert(isPresented: $showAlert) {
             Alert(
@@ -66,20 +55,6 @@ struct UpdateJWTView: View {
                 message: Text(Constants.Features.UpdateJWT.alertMessage),
                 dismissButton: .default(Text(Constants.Alert.okay))
             )
-        }
-    }
-    
-    private func handleUserStateChanged(_ userState: UserState) {
-        self.userState = userState.rawValue
-        switch userState {
-        case .authenticated, .created, .loaded, .identified, .restored: break
-        case .unloaded, .notLoaded, .notCreated, .notAuthenticated: fetchUUID()
-        }
-    }
-    
-    private func fetchUUID() {
-        Freshworks.shared.getUUID { uuid in
-            self.uuid = uuid
         }
     }
     
@@ -106,15 +81,40 @@ struct UpdateJWTView_Previews: PreviewProvider {
 
 class JWTObservableHandler: ObservableObject, FreshworksJWTDelegate {
     
+    @Published var userState: String = Constants.Characters.emptyString
+    @Published var uuid: String = Constants.Characters.emptyString
     @Published var state: UserState = .notLoaded
+    private var cancellables: Set<AnyCancellable> = []
     
     func setDelegate() {
         Freshworks.shared.setJWTDelegate(self)
     }
     
     func userStateChanged(_ userState: UserState) {
-        DispatchQueue.main.async {
-            self.state = userState
+        DispatchQueue.main.async { [weak self] in
+            self?.state = userState
+        }
+    }
+    
+    func setUserState() {
+        $state
+            .sink { [weak self] newUserState in
+                self?.handleUserStateChanged(newUserState)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func handleUserStateChanged(_ userState: UserState) {
+        self.userState = userState.rawValue
+        switch userState {
+        case .authenticated, .created, .loaded, .identified, .restored: break
+        case .unloaded, .notLoaded, .notCreated, .notAuthenticated: fetchUUID()
+        }
+    }
+    
+    private func fetchUUID() {
+        Freshworks.shared.getUUID { [weak self] uuid in
+            self?.uuid = uuid
         }
     }
 }

@@ -11,7 +11,6 @@ enum FilterOptions: String, CaseIterable {
     case conversation = "Conversation"
     case category = "Category"
     case article = "Article"
-    case none = "None"
 }
 
 
@@ -59,7 +58,7 @@ struct ConversationFaqsCategoryWithTags: View {
     }
     
     private func dismissAction() {
-        didDismiss([], .none, false)
+        didDismiss([], .conversation, false)
     }
     
     private func updateButtonTapped() {
