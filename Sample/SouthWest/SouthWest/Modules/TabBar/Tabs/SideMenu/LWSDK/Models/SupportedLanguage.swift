@@ -81,7 +81,6 @@ enum SupportedLanguage: String, CaseIterable, Identifiable {
     }
     
     var id: SupportedLanguage { self }
-    
     static func getLanguages(for changeLanguagueType: ChangeLanguagueType) -> [SupportedLanguage] {
         switch changeLanguagueType {
         case .widget:

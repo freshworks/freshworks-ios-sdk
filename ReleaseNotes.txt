@@ -2,7 +2,28 @@ Freshchat iOS SDK - Powered by Freshdesk
 
 Documentation   : https://support.freshchat.com
 Support Email   : support@freshchat.com
-Version         : 0.0.1-beta
+Version         : 0.0.2-beta
+
+
+Ver 0.0.2-beta
+__________________________
+
+New Features:
+ - Personalize your conversations with our new methods setBotVariables(jsonString: String) and setConversationProperties(jsonString: String), allowing you to set conversation properties and bot variables.
+ - Create a more dynamic and interactive bot conversation flow by triggering specific bot actions in Freshchat.
+ - Our bots now support FAQs, providing instant, automated responses to common queries.
+ - Customize your widget from the portal or with our new method updateConfig(headerProperty: [String : Any]?, contentProperty: [String : Any]?)
+ - Gain deeper insights into user behavior with our new method trackUserEvents(name: String, payload: [String: String]?), supporting the tracking of custom events.
+ - We now support a range of Messenger Events, including FRESHWORKS_MESSAGE_SENT, FRESHWORKS_MESSAGE_RECEIVED, FRESHWORKS_CSAT_UPDATED, FRESHWORKS_CSAT_RECEIVED, and FRESHWORKS_DOWNLOAD_FILE. 
+ - Stay updated with our SDK version with our new method getSDKVersion() -> String
+ - Gain control over your widget visibility with our new method dismissFreshworksSDKViews()
+
+Enhancements
+ - Introduced validation for suspended accounts, providing a more secure user interaction with the SDK.
+
+Bug Fixes:
+ - Fixed the ability to set user properties before initiating a conversation using the setUserDetails method, ensuring a smoother user experience.
+ - Fixed the issue where device properties were wrongly updated for JWT users.
 
 Ver 0.0.1-beta
 __________________________

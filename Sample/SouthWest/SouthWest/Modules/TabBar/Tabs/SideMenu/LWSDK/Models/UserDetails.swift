@@ -43,7 +43,6 @@ extension UserDefaults {
         removeObject(forKey: Constants.UserDefaultsKeys.restoreID)
         
         //Locale change
-        removeObject(forKey: Constants.UserDefaultsKeys.selectedWidgetLanguageLocaleCode)
         removeObject(forKey: Constants.UserDefaultsKeys.selectedUserLanguageLocaleCode)
         
         //Parallel conversation
@@ -55,7 +54,17 @@ extension UserDefaults {
         removeObject(forKey: Constants.UserDefaultsKeys.tagsSelectOption)
         
         //Jwt
-        removeObject(forKey: Constants.UserDefaultsKeys.jwt)
+        updateJWT(Constants.Characters.emptyString)
+        
+        //Conversation Properties
+        removeObject(forKey: Constants.UserDefaultsKeys.conversationProperties)
+        
+        //Bot variables
+        removeObject(forKey: Constants.UserDefaultsKeys.botVariables)
+        
+        //Header and content property
+        removeObject(forKey: Constants.UserDefaultsKeys.headerProperty)
+        removeObject(forKey: Constants.UserDefaultsKeys.contentProperty)
     }
 }
 
@@ -89,11 +98,12 @@ extension UserDefaults {
         }
     }
     
-    func updateSDKConfig(_ sdkConfig: SDKConfig) {
+    func updateSDKConfig(_ sdkConfig: SDKConfig,
+                         domain: String? = UserDefaults.standard.string(forKey: Constants.UserDefaultsKeys.domain)) {
         UserDefaults.standard.set(sdkConfig.source, forKey: Constants.UserDefaultsKeys.source)
         UserDefaults.standard.set(sdkConfig.appId, forKey: Constants.UserDefaultsKeys.appID)
         UserDefaults.standard.set(sdkConfig.appKey, forKey: Constants.UserDefaultsKeys.appKey)
-        UserDefaults.standard.set(sdkConfig.domain, forKey: Constants.UserDefaultsKeys.domain)
+        UserDefaults.standard.set(domain ?? sdkConfig.domain, forKey: Constants.UserDefaultsKeys.domain)
         UserDefaults.standard.set(sdkConfig.widgetId, forKey: Constants.UserDefaultsKeys.widgetID)
         UserDefaults.standard.set(sdkConfig.jwtAuthToken, forKey: Constants.UserDefaultsKeys.jwt)
     }
@@ -101,7 +111,7 @@ extension UserDefaults {
     func updateJWT(_ jwt: String) {
         UserDefaults.standard.set(jwt, forKey: Constants.UserDefaultsKeys.jwt)
     }
-    
+
     func getSDKConfig() -> SDKConfig? {
         guard let source =  UserDefaults.standard.string(forKey: Constants.UserDefaultsKeys.source),
               let appID =  UserDefaults.standard.string(forKey: Constants.UserDefaultsKeys.appID),

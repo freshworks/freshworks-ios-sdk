@@ -14,7 +14,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initializeFreshworksSDK()
         registerNotifications()
+        initialSetup()
         return true
+    }
+    
+    private func initialSetup() {
+        KeyboardObserver.shared.startObserving()
     }
     
     func initializeFreshworksSDK() {
@@ -26,7 +31,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                                        appKey: Configurations.Account.appKey,
                                        domain: Configurations.Account.domain)
             Freshworks.shared.initializeFreshworksSDK(with:sdkConfig)
-            UserDefaults.standard.updateSDKConfig(sdkConfig)
+            UserDefaults.standard.updateSDKConfig(sdkConfig, domain: Configurations.Account.domain)
         }
         
     }
@@ -67,7 +72,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         if Freshworks.shared.isFreshworksNotification(userInfo) {
-            Freshworks.shared.handleRemoteNotification(userInfo) {
+            if !Freshworks.shared.isFreshworksConversationScreenVisible {
                 completionHandler( [.banner, .badge, .sound])
             }
         } else {

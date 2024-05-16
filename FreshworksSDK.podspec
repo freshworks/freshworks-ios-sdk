@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         		 = "FreshworksSDK"
-  s.version      		 = "0.0.1-beta"
+  s.version      		 = "0.0.2-beta"
   s.summary      		 = "Freshworks iOS SDK - Modern messaging software that your sales and customer engagement teams will love."
   s.description  		 = <<-DESC
                    			Modern messaging software that your sales and customer engagement teams will love.

@@ -37,7 +37,7 @@ struct CustomTabView: View {
             if isSideMenuVisible {
                 HStack(spacing: 0) {
                     SideMenuView(isSideMenuVisible: $isSideMenuVisible)
-                        .edgesIgnoringSafeArea([.all])
+                        .edgesIgnoringSafeArea([.vertical])
                         .frame(width: UIScreen.main.bounds.width * 0.6, height: UIScreen.main.bounds.height)
 
                     Button {
@@ -46,12 +46,12 @@ struct CustomTabView: View {
                         Rectangle()
                             .foregroundColor(.black.opacity(0.4))
                     }
-                    .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height)
                     .edgesIgnoringSafeArea([.all])
                 }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+            isSideMenuVisible = false
             orientation = UIDevice.current.orientation
         }
         

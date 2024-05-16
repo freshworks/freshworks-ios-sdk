@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import FreshworksSDK
+import FreshworksSDK 
 
 struct ChangeAccountView: View {
     
@@ -34,11 +34,6 @@ struct ChangeAccountView: View {
             }, content: {
                 
                 FeatureTextfield(
-                    title: Constants.Features.LoadAccount.widgetSourceTitle,
-                    placeholder: Constants.Features.LoadAccount.widgetSourcePlaceholder,
-                    content: $source
-                )
-                FeatureTextfield(
                     title: Constants.Features.LoadAccount.appIdTitle,
                     placeholder: Constants.Features.LoadAccount.appIdPlaceholder,
                     content: $appID
@@ -52,6 +47,11 @@ struct ChangeAccountView: View {
                     title: Constants.Features.LoadAccount.domainTitle,
                     placeholder: Constants.Features.LoadAccount.domainPlaceholder,
                     content: $domain
+                )
+                FeatureTextfield(
+                    title: Constants.Features.LoadAccount.widgetSourceTitle,
+                    placeholder: Constants.Features.LoadAccount.widgetSourcePlaceholder,
+                    content: $source
                 )
                 FeatureTextfield(
                     title: Constants.Features.LoadAccount.widgetIdTitle,
@@ -92,7 +92,10 @@ struct ChangeAccountView: View {
                                    appKey: appKey,
                                    domain: domain,
                                    widgetId: widgetID,
+                                   locale: Constants.Features.ChangeLanguage.defaultSelectedLanguageCode,
                                    jwtAuthToken: jwt)
+        
+        UserDefaults.standard.updateSDKConfig(sdkConfig, domain: domain)
         
         didDismiss(sdkConfig)
     }

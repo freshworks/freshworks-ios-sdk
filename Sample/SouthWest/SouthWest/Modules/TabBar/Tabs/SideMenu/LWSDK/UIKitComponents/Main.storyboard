@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eux-H3-wqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eux-H3-wqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,20 +33,20 @@
             <objects>
                 <viewController storyboardIdentifier="LWSDKFeaturesViewController" title="Settings" id="sjQ-03-CbW" customClass="ViewController" customModule="SouthWest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QNJ-yx-FgW">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndJ-2v-sU1">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="963"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2A-nS-npW" userLabel="Container">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="479"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="720"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qEL-Zg-kF0">
-                                                <rect key="frame" x="-6.6666666666666572" y="0.0" width="406.33333333333326" height="479"/>
+                                                <rect key="frame" x="-42" y="0.0" width="477" height="704"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q2B-oE-Drb">
-                                                        <rect key="frame" x="131.33333333333334" y="0.0" width="155.00000000000003" height="29"/>
+                                                        <rect key="frame" x="161" y="0.0" width="155" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Show Conversations"/>
                                                         <constraints>
@@ -67,7 +67,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NDX-al-T6o" userLabel="showParallelConversationInputVC">
-                                                        <rect key="frame" x="125.66666666666669" y="45" width="166" height="29"/>
+                                                        <rect key="frame" x="155.33333333333334" y="47.666666666666664" width="166.00000000000003" height="31.999999999999993"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Parallel Conversations"/>
@@ -86,7 +86,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-mG-aGt">
-                                                        <rect key="frame" x="161" y="90" width="96" height="29"/>
+                                                        <rect key="frame" x="190.66666666666666" y="90" width="95.999999999999972" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Show FAQs"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -104,7 +104,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEQ-4Q-DCP">
-                                                        <rect key="frame" x="108.33333333333331" y="135" width="201" height="29"/>
+                                                        <rect key="frame" x="138" y="135" width="201" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Conversations &amp; FAQs Tags"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -122,7 +122,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZB5-FG-CqU">
-                                                        <rect key="frame" x="156" y="180" width="106" height="29"/>
+                                                        <rect key="frame" x="185.66666666666666" y="180" width="105.99999999999997" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Identify User"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -140,7 +140,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2H-0p-eZy">
-                                                        <rect key="frame" x="138.33333333333334" y="225" width="141.00000000000003" height="29"/>
+                                                        <rect key="frame" x="168" y="225" width="141" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Update Properties"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -158,7 +158,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwI-t7-Cam">
-                                                        <rect key="frame" x="162" y="270" width="94" height="29"/>
+                                                        <rect key="frame" x="191.66666666666666" y="270" width="93.999999999999972" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Reset User"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -176,7 +176,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-hk-PgM">
-                                                        <rect key="frame" x="157" y="315" width="104" height="29"/>
+                                                        <rect key="frame" x="186.66666666666666" y="315" width="103.99999999999997" height="29"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Update JWT"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -193,8 +193,8 @@
                                                             <action selector="didTapUpdateJWT:" destination="sjQ-03-CbW" eventType="touchUpInside" id="Ydx-4G-aFW"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4o1-Gf-vcQ" userLabel="showLanguageSelectionPickerView">
-                                                        <rect key="frame" x="113.66666666666669" y="360" width="190" height="29"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4o1-Gf-vcQ">
+                                                        <rect key="frame" x="143.33333333333334" y="382.66666666666669" width="190.00000000000003" height="31.666666666666686"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Change Widget Language"/>
@@ -212,8 +212,8 @@
                                                             <action selector="changeWidgetLanguage:" destination="sjQ-03-CbW" eventType="touchUpInside" id="80g-aB-wL3"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHP-di-fxo" userLabel="showLanguageSelectionPickerView">
-                                                        <rect key="frame" x="121" y="405" width="175" height="29"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nHP-di-fxo">
+                                                        <rect key="frame" x="150.66666666666666" y="430.33333333333331" width="174.99999999999997" height="31.666666666666686"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Change User Language"/>
@@ -232,7 +232,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FY9-mX-sdU" userLabel="TrackTestUserEvent">
-                                                        <rect key="frame" x="148" y="450" width="121" height="29"/>
+                                                        <rect key="frame" x="177.66666666666666" y="478" width="120.99999999999997" height="32"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Log User Event"/>
@@ -250,8 +250,8 @@
                                                             <action selector="didTestTrackUserEvent:" destination="sjQ-03-CbW" eventType="touchUpInside" id="N8B-WT-YVm"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4cp-Da-KOp" userLabel="showParallelConversationInputVC">
-                                                        <rect key="frame" x="152.66666666666666" y="495" width="111.99999999999997" height="29"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4cp-Da-KOp">
+                                                        <rect key="frame" x="182.33333333333334" y="526" width="112.00000000000003" height="31.666666666666629"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="buttonDarkBlack"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="Load Account"/>
@@ -269,14 +269,78 @@
                                                             <action selector="changeAccount:" destination="sjQ-03-CbW" eventType="touchUpInside" id="F9s-HV-Vy3"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qVY-MK-wMJ">
+                                                        <rect key="frame" x="131.66666666666666" y="573.66666666666663" width="212.99999999999997" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="Update Custom Bot Variables"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Update Custom Bot Variables   ">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="updateCustomBotVariables:" destination="sjQ-03-CbW" eventType="touchUpInside" id="zBK-Wh-vUi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anB-IL-VmC">
+                                                        <rect key="frame" x="136.66666666666669" y="585" width="204" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Set Conversation Properties   "/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="setCustomProperties:" destination="sjQ-03-CbW" eventType="touchUpInside" id="eAm-y1-X3Z"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-GX-uBW">
+                                                        <rect key="frame" x="145" y="630" width="187" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Set config for localisation   "/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="didSetConfigForLocalisation:" destination="sjQ-03-CbW" eventType="touchUpInside" id="csf-bI-Urh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gb-hg-f2J" userLabel="Configure">
+                                                        <rect key="frame" x="195" y="675" width="87" height="29"/>
+                                                        <color key="backgroundColor" name="buttonDarkBlack"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="   Configure   "/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="14"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="configureTapped:" destination="sjQ-03-CbW" eventType="touchUpInside" id="hXH-G7-UYF"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="qEL-Zg-kF0" firstAttribute="top" secondItem="o2A-nS-npW" secondAttribute="top" id="VCV-Ua-L3b"/>
-                                            <constraint firstAttribute="bottom" secondItem="qEL-Zg-kF0" secondAttribute="bottom" id="X78-Uc-zjV"/>
                                             <constraint firstItem="qEL-Zg-kF0" firstAttribute="centerX" secondItem="o2A-nS-npW" secondAttribute="centerX" id="iF7-Ka-Uik"/>
+                                            <constraint firstItem="qEL-Zg-kF0" firstAttribute="top" secondItem="o2A-nS-npW" secondAttribute="top" id="x1M-aE-Qfl"/>
+                                            <constraint firstAttribute="bottom" secondItem="qEL-Zg-kF0" secondAttribute="bottom" constant="16" id="yek-Fs-jZ5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -289,6 +353,17 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="WEs-QH-AxA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="FVK-cd-zBZ"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-- " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7QK-gx-v98">
+                                <rect key="frame" x="257.33333333333331" y="91" width="33.333333333333314" height="24"/>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.23137254901960785" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Mgy-aB-pdh"/>
+                                    <constraint firstAttribute="height" secondItem="7QK-gx-v98" secondAttribute="width" multiplier="1:1.4" id="WdN-qr-SKi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s9O-3N-o1n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -297,18 +372,23 @@
                             <constraint firstItem="s9O-3N-o1n" firstAttribute="bottom" secondItem="ndJ-2v-sU1" secondAttribute="bottom" id="NJ6-rn-eyp"/>
                             <constraint firstItem="o2A-nS-npW" firstAttribute="width" secondItem="s9O-3N-o1n" secondAttribute="width" id="Uex-2d-an0"/>
                             <constraint firstItem="ndJ-2v-sU1" firstAttribute="leading" secondItem="QNJ-yx-FgW" secondAttribute="leading" id="cIY-6Z-b7g"/>
+                            <constraint firstItem="7QK-gx-v98" firstAttribute="centerX" secondItem="q2B-oE-Drb" secondAttribute="trailing" id="rPX-DB-qBY"/>
+                            <constraint firstItem="7QK-gx-v98" firstAttribute="centerY" secondItem="q2B-oE-Drb" secondAttribute="top" id="rSt-et-IrT"/>
                             <constraint firstAttribute="trailing" secondItem="ndJ-2v-sU1" secondAttribute="trailing" id="siu-eP-AP7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sig-Ck-s7M"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="393" height="1100"/>
                     <connections>
                         <outlet property="stackview" destination="qEL-Zg-kF0" id="t7g-mt-T6N"/>
+                        <outlet property="unreadCountBadgeLabel" destination="7QK-gx-v98" id="PZD-G6-ihg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aF6-6K-ED7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="-2"/>
+            <point key="canvasLocation" x="863" y="-2"/>
         </scene>
     </scenes>
     <resources>
